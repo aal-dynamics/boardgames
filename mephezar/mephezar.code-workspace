@@ -4,6 +4,9 @@
       "path": "boardgames"
     },
     {
+      "path": "boardgames.Test"
+    },
+    {
       "path": ".AL-Go"
     }
   ],
