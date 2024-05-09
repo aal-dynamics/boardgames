@@ -1,7 +1,7 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
+	"version": "0.2.0",
+	"configurations": [
+		{
             "name": "Local DEV",
             "type": "al",
             "request": "launch",
@@ -25,5 +25,5 @@
             "schemaUpdateMode": "ForceSync",
             "dependencyPublishingOption": "Ignore"
         }
-    ]
+	]
 }

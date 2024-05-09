@@ -1,13 +1,13 @@
 {
   "folders": [
     {
+      "path": ".AL-Go"
+    },
+    {
       "path": "boardgames"
     },
     {
       "path": "boardgames.Test"
-    },
-    {
-      "path": ".AL-Go"
     }
   ],
   "settings": {}
