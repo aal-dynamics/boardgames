@@ -2,5 +2,5 @@
   "type": "PTE",
   "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
   "templateSha": "0af8feb4cf098ebec44278866877fc9aceff0513",
-  "gitHubRunner": "self-hosted,windows,BC"
+  "gitHubRunner": "self-hosted, Windows, BC"
 }
