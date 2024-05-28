@@ -5,5 +5,13 @@
   "gitHubRunner": "self-hosted",
   "DeployToCUSTOM": {
     "EnvironmentName": "CICD_Prod"
+  },
+  "environments": [
+    "OnPrem"
+  ],
+  "DeployToOnPremTest": {
+    "EnvironmentType": "OnPrem",
+    "ContinuousDeployment": false,
+    "runs-on": "onprem"
   }
 }

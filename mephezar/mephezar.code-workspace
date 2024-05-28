@@ -4,6 +4,9 @@
       "path": ".AL-Go"
     },
     {
+      "path": "..\\.github"
+    },
+    {
       "path": "boardgames"
     },
     {
