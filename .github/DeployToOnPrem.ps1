@@ -29,9 +29,9 @@ Write-Host "Install or update Apps"
 # execute Install CmdLet
 Start-Sleep -Seconds 3.3
 $bgApp = Get-ChildItem -Path $deployAppsPath -Filter "mephezar_boardgames_*.app"
-if ($bgApp) {
+#if ($bgApp) {
     Publish-BCContainerApp -containerName $containerName -appFile $bgApp -skipVerification -sync -install
-}
+#}
 
 Start-Sleep -Seconds 3.3
 $filename = $date + "_99_finish.txt"
