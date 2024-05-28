@@ -20,7 +20,8 @@ foreach ($deployArtifact in $deployArtifacts)
 }
 
 # Import custom Deployment Tools
-
+set-location $deployAppsPath
+mkdir 'testOnPrem'
 
 Write-Host "Install or update Apps"
 # execute Install CmdLet
