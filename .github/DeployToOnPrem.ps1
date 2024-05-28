@@ -4,7 +4,7 @@ Param(
 )
 $EnvironmentName = $parameters.EnvironmentName
 
-$deployAppsPath = 'C:\Deployment'
+$deployAppsPath = 'C:\Deployment\'
 $containerName = 'bcOnPrem23Test'
 
 Write-Host "Deploying to $EnvironmentName"
@@ -30,7 +30,7 @@ Write-Host "Install or update Apps"
 Start-Sleep -Seconds 3.3
 $bgApp = Get-ChildItem -Path $deployAppsPath -Filter "mephezar_boardgames_*.app"
 #if ($bgApp) {
-    Publish-BCContainerApp -containerName $containerName -appFile $bgApp -skipVerification -sync -install
+    Publish-BCContainerApp -containerName $containerName -appFile $bgApp.FullName -skipVerification -sync -install
 #}
 
 Start-Sleep -Seconds 3.3
