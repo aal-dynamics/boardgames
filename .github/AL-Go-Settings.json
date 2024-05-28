@@ -3,15 +3,15 @@
   "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
   "templateSha": "0af8feb4cf098ebec44278866877fc9aceff0513",
   "gitHubRunner": "self-hosted",
-  "DeployToCUSTOM": {
+  "deployToCUSTOM": {
     "EnvironmentName": "CICD_Prod"
   },
   "environments": [
     "OnPrem"
   ],
-  "DeployToOnPrem": {
+  "deployToOnPrem": {
     "EnvironmentType": "OnPrem",
-    "ContinuousDeployment": false,
-    "runs-on": "onprem"
+    "ContinuousDeployment": true,
+    "runs-on": "OnPrem"
   }
 }
