@@ -5,6 +5,7 @@ Param(
 $EnvironmentName = $parameters.EnvironmentName
 
 $deployAppsPath = 'C:\Deployment'
+$containerName = 'bcOnPrem23Test'
 
 Write-Host "Deploying to $EnvironmentName"
 $deployApps = $parameters.apps
@@ -14,14 +15,29 @@ Write-Host "Move to deployment folder: $deployApps"
 Move-Item -Path $deployApps -destination $deployAppsPath
 Write-Host "Expanding artifacts"
 $deployArtifacts = Get-ChildItem -Path $deployAppsPath -Filter '*.zip'
-foreach ($deployArtifact in $deployArtifacts)
-{
+foreach ($deployArtifact in $deployArtifacts) {
     Expand-Archive -Literalpath $deployArtifact.FullName -destination $deployAppsPath -Force
 }
 
 # Import custom Deployment Tools
-set-location $deployAppsPath
-mkdir 'testOnPrem'
+#set-location $deployAppsPath
+#mkdir 'OnPrem'
+
+Write-Host "Loading BCContainerHelper"
+$filename = (Get-Date).ToString('yyyy-MM-dd') + "_01_start.txt"
+$filevalue = "Last deployment started: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
+New-Item -Path . -Name $filename -ItemType "file" -Value $filevalue -Force
+
+Install-module bccontainerhelper -force
+Get-BcContainerAppInfo
 
 Write-Host "Install or update Apps"
 # execute Install CmdLet
+$bgApp = Get-ChildItem -Path $deployAppsPath -Filter 'mephezar_boardgames_*.zip'
+if ($bgApp) {
+    Publish-BCContainerApp -containerName $containerName -appFile $bgApp -skipVerification -sync -install
+}
+
+$filename = (Get-Date).ToString('yyyy-MM-dd') + "_99_finish.txt"
+$filevalue = "Last deployment finished: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
+New-Item -Path . -Name $filename -ItemType "file" -Value $filevalue -Force
