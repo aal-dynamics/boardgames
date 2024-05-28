@@ -33,6 +33,7 @@ if ($bgApp) {
     Publish-BCContainerApp -containerName $containerName -appFile $bgApp -skipVerification -sync -install
 }
 
+Start-Sleep -Seconds 3.3
 $filename = $date + "_99_finish.txt"
 $filevalue = "Last deployment finished: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
 New-Item -Path $deployAppsPath -Name $filename -ItemType "file" -Value $filevalue -Force
