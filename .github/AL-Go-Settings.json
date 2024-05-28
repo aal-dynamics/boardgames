@@ -9,10 +9,9 @@
   "environments": [
     "OnPrem"
   ],
-  "DeployToOnPremTest": {
+  "DeployToOnPrem": {
     "EnvironmentType": "OnPrem",
     "ContinuousDeployment": false,
-    "runs-on": "onprem",
-    "EnvironmentName": "bconprem23test"
+    "runs-on": "onprem"
   }
 }
