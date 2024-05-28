@@ -23,13 +23,15 @@ foreach ($deployArtifact in $deployArtifacts) {
 #set-location $deployAppsPath
 #mkdir 'OnPrem'
 
-Write-Host "Loading BCContainerHelper"
-$filename = (Get-Date).ToString('yyyy-MM-dd') + "_01_start.txt"
+$date = (Get-Date).ToString('yyyy-MM-dd')
+$filename = $date + "_01_start.txt"
 $filevalue = "Last deployment started: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
-New-Item -Path . -Name $filename -ItemType "file" -Value $filevalue -Force
+New-Item -Path $deployAppsPath -Name $filename -ItemType "file" -Value $filevalue -Force
 
+Write-Host "Loading BCContainerHelper"
 Install-module bccontainerhelper -force
 Get-BcContainerAppInfo
+Write-Host "Loading BCContainerHelper finished"
 
 Write-Host "Install or update Apps"
 # execute Install CmdLet
@@ -38,6 +40,6 @@ if ($bgApp) {
     Publish-BCContainerApp -containerName $containerName -appFile $bgApp -skipVerification -sync -install
 }
 
-$filename = (Get-Date).ToString('yyyy-MM-dd') + "_99_finish.txt"
+$filename = $date + "_99_finish.txt"
 $filevalue = "Last deployment finished: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
-New-Item -Path . -Name $filename -ItemType "file" -Value $filevalue -Force
+New-Item -Path $deployAppsPath -Name $filename -ItemType "file" -Value $filevalue -Force
