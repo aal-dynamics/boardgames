@@ -25,21 +25,12 @@ $filename = $date + "_01_start.txt"
 $filevalue = "Last deployment started: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
 New-Item -Path $deployAppsPath -Name $filename -ItemType "file" -Value $filevalue -Force
 
-Write-Host "Loading BCContainerHelper"
-Install-module bccontainerhelper -force
-Get-BcContainerAppInfo
-Write-Host "Loading BCContainerHelper finished"
-
-<#
-
 Write-Host "Install or update Apps"
 # execute Install CmdLet
 $bgApp = Get-ChildItem -Path $deployAppsPath -Filter 'mephezar_boardgames_*.zip'
 if ($bgApp) {
     Publish-BCContainerApp -containerName $containerName -appFile $bgApp -skipVerification -sync -install
 }
-
-#>
 
 $filename = $date + "_99_finish.txt"
 $filevalue = "Last deployment finished: " + (Get-Date).ToString('yyyy-MM-dd HH-mm-ss')
