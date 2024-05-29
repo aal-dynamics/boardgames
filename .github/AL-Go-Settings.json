@@ -12,6 +12,6 @@
   "deployToOnPrem": {
     "EnvironmentType": "OnPrem",
     "ContinuousDeployment": true,
-    "runs-on": "OnPrem"
+    "runs-on": "groupm"
   }
 }
