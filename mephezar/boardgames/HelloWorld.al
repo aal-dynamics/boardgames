@@ -6,8 +6,14 @@ pageextension 60200 CustomerListExt extends "Customer List"
 {
     trigger OnOpenPage();
     begin
-        Message('App published: Hello boardgame geek  world!');
+        Message('App published: Hello boardgame geek world!');
 
+        if 1 = 2 then
+            Error('');
+
+        // ,
+        //   "enableAppSourceCop": false,
+        //   "enablePerTenantExtensionCop": false
     end;
 }
 
