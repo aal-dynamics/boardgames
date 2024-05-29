@@ -8,7 +8,7 @@ pageextension 60200 CustomerListExt extends "Customer List"
     begin
         Message('App published: Hello boardgame geek world!');
 
-        if 1 = 2 then
+        if (1 = 2) or (1 = 3) then
             Error('');
 
         // ,
