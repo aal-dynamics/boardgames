@@ -5,25 +5,11 @@
             "name": "Local DEV",
             "type": "al",
             "request": "launch",
-            "server": "http://bcboardgames",
+            "server": "http://bc23onprem",
             "serverInstance": "BC",
             "port": 7049,
             "tenant": "default",
             "authentication": "UserPassword"
-        },
-        {
-            "name": "QA Sandbox",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "Sandbox",
-            "tenant": "957f07d7-c4bb-4114-af2f-3ad6ce2c5660",
-            "environmentName": "QA",
-            "authentication": "AAD",
-            "breakOnError": true,
-            "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true,
-            "schemaUpdateMode": "ForceSync",
-            "dependencyPublishingOption": "Ignore"
         }
     ]
 }
