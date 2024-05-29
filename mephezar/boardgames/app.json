@@ -28,6 +28,6 @@
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false
   },
-  "target": "OnPrem",
+  "target": "Cloud",
   "runtime": "12.1"
 }
