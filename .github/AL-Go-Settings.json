@@ -14,6 +14,6 @@
     "ContinuousDeployment": true,
     "runs-on": "groupm"
   },
-  "artifact": "https://bcartifacts-exdbf9fwegejdqak.b02.azurefd.net/onprem/23.2.14098.14562/de",
+  "artifact": "/onprem/23.2.0.0/de/closest",
   "versioningStrategy": 2
 }
