@@ -28,6 +28,5 @@
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false
   },
-  "runtime": "12.1",
   "target": "OnPrem"
 }
