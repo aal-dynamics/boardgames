@@ -13,5 +13,6 @@
     "EnvironmentType": "OnPrem",
     "ContinuousDeployment": true,
     "runs-on": "groupm"
-  }
+  },
+  "artifact": "latest"
 }

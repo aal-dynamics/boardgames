@@ -16,6 +16,7 @@ Move-Item -Path $deployApps -destination $deployAppsPath
 Write-Host "Expanding artifacts"
 $deployArtifacts = Get-ChildItem -Path $deployAppsPath -Filter '*.zip'
 foreach ($deployArtifact in $deployArtifacts) {
+    Write-Host "Extract Zip: " + $deployArtifact.Name
     Expand-Archive -Literalpath $deployArtifact.FullName -destination $deployAppsPath -Force
 }
 
