@@ -14,6 +14,6 @@
     "ContinuousDeployment": true,
     "runs-on": "groupm"
   },
-  "artifact": "*",
+  "artifact": "23.*",
   "versioningStrategy": 2
 }

@@ -41,5 +41,6 @@
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false
   },
-  "runtime": "12.2"
+  "runtime": "12.2",
+  "target": "OnPrem"
 }
