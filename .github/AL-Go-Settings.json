@@ -16,5 +16,6 @@
   },
   "artifact": "/onprem/23.2.0.0/de/closest",
   "versioningStrategy": 2,
-  "enableAppSourceCop": false
+  "enableAppSourceCop": false,
+  "enablePerTenantExtensionCop": false
 }
