@@ -11,9 +11,6 @@ pageextension 60200 CustomerListExt extends "Customer List"
         if (1 = 2) or (1 = 3) then
             Error('');
 
-        // ,
-        //   "enableAppSourceCop": false,
-        //   "enablePerTenantExtensionCop": false
     end;
 }
 
